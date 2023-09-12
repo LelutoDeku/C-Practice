@@ -1,9 +1,5 @@
-int rows;
-cin>>rows;
-for(int i=0; i<rows;i++)    {
-    for(int j=0;j<=rows;j++) {
-        if(j<(rows-i))
-            cout<<" ";
-        else
-            cout<<"*";
-    }
+for(int j=0;j<=i;j++)
+    //     if(j!=0 && j!=i)
+    //         continue;
+    //     else 
+    //         cout<<"*";

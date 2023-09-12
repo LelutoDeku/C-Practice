@@ -182,26 +182,83 @@ int main()
 // }
 
 //5.Palindromic Pattern
-int rows,space =0;
-cin>>rows;
-for(int i=0;i<rows;i++) {
-    space = rows - i;
+// int rows,space =0;
+// cin>>rows;
+// for(int i=0;i<rows;i++) {
+//     space = rows - i;
 
-    for(int j=0;j<space;j++)    
-        cout<<" ";
+//     for(int j=0;j<space;j++)    
+//         cout<<" ";
 
-    for (int j=0;j<=rows;j++)
-        if(j<(rows-i))
-            cout<<" ";
-        else
-            cout<<(rows-j)+1<<" ";
+//     for (int j=0;j<=rows;j++)
+//         if(j<(rows-i))
+//             cout<<" ";
+//         else
+//             cout<<(rows-j)+1<<" ";
 
-    for (int j=1;j<=i;j++)
-        cout<<j+1<<" ";
+//     for (int j=1;j<=i;j++)
+//         cout<<j+1<<" ";
     
-    cout<<endl;
+//     cout<<endl;
     
-}
+// }
+
+//6.star pattern
+// int rows,space =0;
+// cin>>rows;
+// for(int i=0;i<rows;i++) {
+//     space = rows - i;
+
+//     for(int j=0;j<space;j++)    
+//         cout<<" ";
+
+//     for (int j=0;j<=rows;j++)
+//         if(j<(rows-i))
+//             cout<<" ";
+//         else
+//             cout<<"*"<<" ";
+
+//     for (int j=1;j<=i;j++)
+//         cout<<"*"<<" ";
+    
+//     cout<<endl;
+        
+// }
+
+// //reverse printing
+
+// for(int i=rows;i>0;i--) {
+//     space = rows - i;
+
+//     for(int j=0;j<space;j++)    
+//         cout<<" ";
+
+//     for (int j=0;j<=rows;j++)
+//         if(j<(rows-i))
+//             cout<<" ";
+//         else
+//             cout<<"*"<<" ";
+
+//     for (int j=1;j<=i;j++)
+//         cout<<"*"<<" ";
+    
+//     cout<<endl;
+// }
+
+
+//7.zigzag pattern
+// int columns;
+// cin>>columns;
+// for (int i=1;i<=3;i++)   {
+//     for(int j=1;j<=columns;j++)  {
+//         if(((i+j)%4==0) || (i==2 && j%4==0))
+//             cout<<"*";
+//         else
+//             cout<<" ";
+//     }
+
+//     cout<<endl;
+// }
 
 
 
