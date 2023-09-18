@@ -1,7 +1,8 @@
+// #include <bits/stdc++.h>//inlcudes all thother c++ libraries so no need to add any library it contains everything
 #include <stdio.h>
 #include <iostream>
- 
- 
+
+
  //max of three numbers
 int main()
 {
@@ -27,7 +28,6 @@ int main()
 //         break;
 //     }
 // }
-
 
 
 
