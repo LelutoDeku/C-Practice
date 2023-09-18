@@ -29,7 +29,7 @@ int main()
 //     }
 // }
 
-
+// size in range values and bytes : int<long<(long long)
 
 
 
