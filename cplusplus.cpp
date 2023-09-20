@@ -4,8 +4,7 @@
 
 
  //max of three numbers
-int main()
-{
+int main()	{
     using namespace std;
 //     int a,b,c,n;
 //     cin>>a>>b>>c;
