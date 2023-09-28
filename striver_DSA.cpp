@@ -30,17 +30,29 @@ int main()	{
 	// 	cout<<endl;
 	// }
 
-//pairs in containers
-pair<int, int> p1 = {1, 3};
-cout<<p1.first<<" "<<p1.second;
+	//pairs in containers
+	// pair<int, int> p1 = {1, 3};
+	// cout<<p1.first<<" "<<p1.second;
 
-//nested pairing
-pair<int, pair<int, int>> p = {1, {2, 3}};
-cout<<"\n"<<p.first<<" "<<p.second.first<<" "<<p.second.second;
+	// //nested pairing
+	// pair<int, pair<int, int>> p = {1, {2, 3}};
+	// cout<<"\n"<<p.first<<" "<<p.second.first<<" "<<p.second.second;
 
-//array pairs
-pair<int, int> arr[] = { {1, 2},{1, 3},{1, 4},{1, 5}};
-cout<<"\n"<<arr[1].second;
+	// //array pairs
+	// pair<int, int> arr[] = { {1, 2},{1, 3},{1, 4},{1, 5}};
+	// cout<<"\n"<<arr[1].second;
+
+	//about vectors
+	vector<int> v;
+	v.push_back(1);
+	v.emplace_back(2);//faster than push back
+
+	vector<int, int> v1;
+	v1.push_back({1, 2});
+	v1.emplace_back(1,2);//auto assumes args as pairs and inserts
+
+	vector<int> v2(5, 100); //a vector with size = 5 and all values = 100
+
 
 	return 0;
 
