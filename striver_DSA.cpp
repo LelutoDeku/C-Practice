@@ -1,5 +1,4 @@
-#include <iostream>
-#include <stdio.h>
+#include <bits/stdc++.h>
 using namespace std;
 int main()	{
 
@@ -31,6 +30,17 @@ int main()	{
 	// 	cout<<endl;
 	// }
 
+//pairs in containers
+pair<int, int> p1 = {1, 3};
+cout<<p1.first<<" "<<p1.second;
+
+//nested pairing
+pair<int, pair<int, int>> p = {1, {2, 3}};
+cout<<"\n"<<p.first<<" "<<p.second.first<<" "<<p.second.second;
+
+//array pairs
+pair<int, int> arr[] = { {1, 2},{1, 3},{1, 4},{1, 5}};
+cout<<"\n"<<arr[1].second;
 
 	return 0;
 
