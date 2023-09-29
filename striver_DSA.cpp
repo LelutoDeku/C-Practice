@@ -285,6 +285,48 @@ int main()	{
 	//multimap => same as map except it allows duplicate keys
 	//unorderd map => allows unique keys but unsorted, like unordered set and has t(n) = O(1)
 
+	//sorting
+	int a[n];
+	sort(a, a+n); //sorts an array of size n with first element pointing to 'a'
+	sort(v.begin(), v.end()); //sorts a vector of size v.begin() -> v.end()
+
+	sort(a + 2, a + 4);//sorts only between [(a+2), (a+4)] i.e. size of two elements starting from the 3rd element of the array
+	sort(a, a+n, greater<int>); //sorts in DESC order
+
+	pair<int, int> a[] = {{1, 2}, {2, 1}, {4, 1}};
+	//sorting above array in custom way i.e. neither ASC nor DESC
+	//sorting condition: sort according to second element(will be assumed as ASC by default), but if second element is same then sort according to first element but in DESC
+
+	sort(a, a + n, comp);//comp is a self written comparator which is a boolean function
+
+	bool comp(pair<int, int> p1, pair<int, int> p2)	{ //just pick up two example pairs to write function for comparator, don't think in terms of whole arrays
+		//second elements are unequal
+		if(p1.second < p2.second) return true;
+		if(p1.second > p2.second) return false; //comp will swap them internally so that they are in correct order
+
+		//when they are equal
+		if(p1.first < p2.first) return true;
+		return false;
+	}
+
+	//important builtin function
+
+	int num = 7;
+	int cnt = __builtin_popcount(); //returns number of set bits or bits = number of 1s in binary
+
+	long long num = 3254353335435;
+	int cnt = __builtin_popcountll();//works same way
+
+	//all permutations
+	string s = "123";//string must be sorted if s = 231 it will result in 231, 312, 321 and then no permutation => false -> exit the loop hence string must be sorted
+	sort(s.begin(), s.end());
+	do	{
+		cout<<s<<endl;
+	}while(next_permutation(s.begin(), s.end()));
+
+	int max = *max_element(a, a+n);//returns max element of the array
+	int min = *min_element(a, a+n);
+
 
 
 
