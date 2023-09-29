@@ -90,9 +90,20 @@ int main()	{
 	v.erase(v.begin() + 2, v.begin() + 4);//erase values that lie between [2, 4) i.e. in general [start, end)
 
 	v.insert(v.begin(), 300);//inserts 300 as the first value of vector pushing others back i.e. size also increases i.e. it does not replace the first value but gets added before the initial first value
-	v.insert(v.begin() + 1, 2, 10);//
+	v.insert(v.begin() + 1, 2, 10);//inserts values after adding 1 to v.begin() i.e. right after the first value and hence, adds value '10' 2 times 
 
+	vector<int> copy(2, 50);
+	v.insert(v.begin(), copy.begin(), copy.end());//copies a portion of vector 'copy'[in this case the whole vector], and inserts it right after the first value in vector 'v'
 
+	cout<<v.size();//outputs the size of vector
+
+	cout<<v.pop_back();//deletes last element
+
+	cout<<v1.swap(v2);//swaps values in v1 and v2
+
+	v.clear();//removes an entire vector
+
+	cout<<v.empty();//retrun true of vector is empty else false
 
 	return 0;
 
