@@ -97,9 +97,9 @@ int main()	{
 
 	cout<<v.size();//outputs the size of vector
 
-	cout<<v.pop_back();//deletes last element
+	v.pop_back();//deletes last element
 
-	cout<<v1.swap(v2);//swaps values in v1 and v2
+	v1.swap(v2);//swaps values in v1 and v2
 
 	v.clear();//removes an entire vector
 
