@@ -52,6 +52,46 @@ int main()	{
 	v1.emplace_back(1,2);//auto assumes args as pairs and inserts
 
 	vector<int> v2(5, 100); //a vector with size = 5 and all values = 100
+	// vector<int> v2(5);//same as above but only size
+
+	vector<int> v3(5,20);
+	vector<int> v2(v3); //v2 is copy of v3
+
+	//accessing vector elements
+	vector<int>::iterator it = v.begin();//'it' points to memory location where first value of vector is stored
+	it++; //increment can be by +1 or by +2 or by -1 or by -2 i.e. +x or -x
+	cout<<*(it)<<" ";//'it' points to memeory address => it is an address => '*' is used to access data at that memeory location
+
+	vector<int>::iterator i = v.end(); //points to the location just ahead of the memeory location of last value in the vector i.e. i-- will actually point to the memory location of last value
+
+	cout<<v[0]<<" ";//accessing specific values
+
+	cout<<v.back()<<" ";//last value of the vector
+
+	//printing vector
+
+	//declaring iterator
+	for(vector<int>::iterator it = v.begin(); it!=v.end(); it++)	{
+		cout<<*(it)<<" ";
+	}
+
+	//declaring iterator using 'auto' that literally does what it does
+	for(auto it = v.begin(); it!=v.end(); it++)	{
+		cout<<*it<<" ";
+	}
+
+	//using for-each loop
+	for(auto it: v)	{
+		cout<<it<<" ";
+	}
+
+	//operations in vector
+	v.erase(v.begin() + 1); //erase second value
+	v.erase(v.begin() + 2, v.begin() + 4);//erase values that lie between [2, 4) i.e. in general [start, end)
+
+	v.insert(v.begin(), 300);//inserts 300 as the first value of vector pushing others back i.e. size also increases i.e. it does not replace the first value but gets added before the initial first value
+	v.insert(v.begin() + 1, 2, 10);//
+
 
 
 	return 0;
