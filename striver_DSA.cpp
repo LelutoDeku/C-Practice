@@ -30,6 +30,11 @@ int main()	{
 	// 	cout<<endl;
 	// }
 
+
+	//STL library data structures and containers
+
+	//all below functions used with containers have t(n) = O(1) except specifically mentioned ones
+
 	//pairs in containers
 	// pair<int, int> p1 = {1, 3};
 	// cout<<p1.first<<" "<<p1.second;
@@ -104,6 +109,106 @@ int main()	{
 	v.clear();//removes an entire vector
 
 	cout<<v.empty();//retrun true of vector is empty else false
+
+
+	//lists in stl
+
+	list<int> ls;
+
+	ls.push_back(1);
+	ls.emplace_back(3);
+	//inserting at front of list
+	ls.push_front(4);
+	ls.emplace_front(3);
+
+
+	//D-queue
+
+	deque<int> dq;
+	dq.push_back(1);
+	dq.emplace_back(2);
+	dq.push_front(7);
+	dq.emplace_front(8);
+	dq.pop_back();
+	dq.pop_front();
+
+
+	dq.back();
+	dq.front();
+
+
+	//stack in stl
+
+	stack<int> s;
+	s.push(1);
+	s.push(2);
+	s.push(3);
+	s.push(4);
+	s.emplace(5);
+
+	cout<<s.top();
+
+	s.pop();
+
+	cout<<s.size();
+
+	cout<<s.empty();
+
+	stack<int>s1, s2;
+	s1.swap(s2);
+
+	//queue in stl
+
+	queue<int> q;
+	q.push(1);
+	q.push(3);
+	q.emplace(2);
+	q.back() += 9;
+	cout<<q.back();
+
+	cout<<q.front();
+
+	q.pop();
+
+	cout<<q.front();
+
+	//priority queue in stl :  data not stored linearly but in form of trees so that top() always give highest value if type is int and largest string lexicographically if type is str
+
+	priority_queue<int> pq;
+	pq.push(1);
+	pq.push(2);// t(n) = log(n)
+	pq.emplace(3);
+
+	cout<<pq.top();
+
+	pq.pop();// t(n) = log(n) rest all have time compexity = O(1)
+
+	cout<<pq.top();
+
+	//above is max heap and below is min heap
+
+	//minimum heap i.e. gettig min value not the largest value as in normal pq
+	priority_queue<int, vector<int>, greater<int>> pq;
+	pq.push(5);
+	pq.push(2);
+	pq.push(8);
+	pq.emplace(10);
+	cout<<pq.top(); //prints 2
+
+
+	//set in stl
+	// set = sorted + unique => hence not linear container but tree is maintained
+	set<int> st;
+	st.insert(1);
+	st.insert(2);
+	st.insert(2); //wont store
+	st.insert(4);
+	st.insert(3); //will store between 2 and 4 i.e. sorted
+
+
+
+
+
 
 	return 0;
 
