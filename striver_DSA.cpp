@@ -198,14 +198,92 @@ int main()	{
 
 	//set in stl
 	// set = sorted + unique => hence not linear container but tree is maintained
+	//all operations take log(n) time
 	set<int> st;
 	st.insert(1);
 	st.insert(2);
 	st.insert(2); //wont store
 	st.insert(4);
 	st.insert(3); //will store between 2 and 4 i.e. sorted
+	
+	auto it = st.find(3);//will return it = address that points at memory location of value = 3
+
+	auto it = st.find(5); //will return it = st.end() i.e. address just after the last element
+
+	st.erase(5);//t(n) = log(n)
+
+	int cnt = st.count(1);//will return 1 if it exists(only 1 occurence) else 0
+
+	auto it = st.find(3);
+	st.erase(*it); //giving pointer to iterator to erase a element it takes contant time
+
+	auto it1 = st.find(2);
+	auto it2 = st.find(4);
+	st.erase(it1, it2);//same as [start, end)
+
+	auto it = st.lower_bound(2);
+	auto it = st.upper_bound(3);
 
 
+	//multiset in stl
+	//multiset = sorted not unique
+
+	multiset<int> ms;
+	ms.insert(6);
+	ms.insert(6);
+	ms.insert(6);
+	ms.insert(6);// stores all occurences of 6 i.e. ms = {6, 6, 6, 6}
+
+	ms.erase(6); //will erase all 6 and ms will be empty
+
+	int cnt = ms.count(6);//will give total occurences i.e. 4
+
+	ms.erase(ms.find(6));//find() will return first occurence of 6 and erase() will remove the address/portion not the element, like it will remov the link -> as in linklist we break links
+
+	ms.erase(ms.find(6), ms.find(6) + 2);// will remove first 2 occurences of 6
+
+	//unordered set in stl
+	//unordered = unsorted + non-unique
+	//stores in randomized order
+	//has better t(n) than set in most cases except when collision happens
+	//all operations are same with t(n) = O(1); except lower and upper bounds don't work
+	unordered_set<int> us;
+	us.insert(1);
+	us.insert(1);
+	us.insert(2);
+	us.insert(5);
+	us.insert(3);
+
+
+	//maps in stl
+	//map stores unique keys in sorted order; kind of similar to set
+	//have t(n) = log(n)
+	map<int, int> m; // key: value
+	map<int, pair<int, int>> mp; // key: {value, value}
+	map< pair<int, int>, int> mpp; // {key, key}: value
+
+	m[1] = 2;
+	m.emplace({3, 1});
+	m.insert({2, 4});
+	mpp[{2, 3}] = 10;
+
+	for(auto it: m)	{
+		cout<<it.first<<" "<<it.second<<endl;
+	}
+
+	cout<<m[1];
+	cout<<m[5]; //prints 0 or null as 5 doesn't exist
+
+	auto it = m.find(3);
+	cout<<*(it).second;
+
+	auto it = m.find(5); // points to end() i.e. after the map's last element
+
+	auto it = m.lower_bound(2);
+	auto it = m.upper_bound(3);
+
+	//multimap => same as map except it allows duplicate keys
+	//unorderd map => allows unique keys but unsorted, like unordered set and has t(n) = O(1)
 
 
 
