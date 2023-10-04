@@ -327,6 +327,13 @@ int main()	{
 	int max = *max_element(a, a+n);//returns max element of the array
 	int min = *min_element(a, a+n);
 
+	//extraction of digits
+	//1. take (%) of 10 with the number
+	//2. divide by ten 
+	//3. repeat until you get zero
+	//if you notice number of digits = quotient i.e. how many times we divide the number by 10
+	//so logarithmic approach can also be used i.e. digits = log(n) + 1; log with base 10 and auto type-cast it to 'int' to get only integer part
+
 
 
 
