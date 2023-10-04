@@ -327,12 +327,81 @@ int main()	{
 	int max = *max_element(a, a+n);//returns max element of the array
 	int min = *min_element(a, a+n);
 
-	//extraction of digits
+	//extraction of digits ( t(n) = log(n) base 10 becoz we are doing n=n/10 )
 	//1. take (%) of 10 with the number
 	//2. divide by ten 
 	//3. repeat until you get zero
 	//if you notice number of digits = quotient i.e. how many times we divide the number by 10
 	//so logarithmic approach can also be used i.e. digits = log(n) + 1; log with base 10 and auto type-cast it to 'int' to get only integer part
+	
+
+	//printing divisors ( t(n) = O(sqrt(n)) )
+	//1. one way is to use n%i==0 condition
+	//2. second way is : 
+		//there is a pattern in divisors : 1x36, 2x18, 3x12, 4x9, 6x6 after this same numbers keep repeating unitl 36x1 except their positions are interchanged and also note that there is apttern of i x (n/i) for every term i.e. 1x(36/1), 2x(36/2=18),...and so on
+		//so we need to only loop till sqrt(n) becoz after that the same number will be repeated hence we need to stop when same divisors are encountered
+		//thus condition becomes :
+			for(int i=0; i<sqrt(n);i++)	{ //or i*i <= n as sqrt will take some time
+				if(n%i==0)
+				cout << (i);
+				if(n/i != i)
+					cout << (n/i);
+			}
+		//using above method gives unsorted factors to achive sorted order sue list/vector etc..
+	
+
+	//prime number : number that has only 2 factors i.e. 1 and itself
+	//using same above method to determine whether a number is a prime or not
+	for(int i=0; i*i<=n;i++)	{
+		if(n%i==0)
+			count++;
+			if((n/i) != i)
+				count++;
+
+	}
+	if(count ==2); //it is prime else not;
+
+
+	//gcd or hcf
+	//1.brute force method
+	int hcf = 1;
+	for(int i=0;i<min(n1,n2);i++){
+		if(n1%i==0 && n2%i==0)
+			hcf = i;
+	}
+	cout<<hcf;
+	//2. euclidean algo ( t(n) = O(log(min(a, b)) with base c(will fluctuate but no need for it) ) : gcd(a,b) = gcd(a-b, b) but this will become much larger numbers have too much of a difference 
+	//e.g. gcd(52,10) = gcd(52-10,10) = gcd(42,10) = gcd(42-10,10) = gcd(32,10) = gcd(32-10,10) = gcd(22,10) = gcd(22-10,10) = gcd(12,10) = gcd(12-10,10) = gcd(2,10)
+	//now we will have to swap again i.e. gcd(10,2) and continue the process and result would be 2....but if you note we obtained gcd(2,10) at exactly 5 steps i.e. 52%10 = 5 so instead of '-' we can do '%' and swap numbers if left one becomes smaller
+	//thus following logic is formed :
+	while(n1>0 && n2>0)	{ //we will have to decrease the numbers too, until one of them becomes 0 then the other one will be the gcd of the two given numbers
+	if(n1>=n2)
+		n1=n1%n2;
+	else
+		n2=n2%n1;
+	}
+
+	if(n1==0) cout<<n2;
+	else cout<<n1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
